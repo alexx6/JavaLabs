@@ -3,6 +3,7 @@ public class MyList {
     private int size;
 
     MyList() {
+        l = new Object[0];
         size = 0;
     }
 
