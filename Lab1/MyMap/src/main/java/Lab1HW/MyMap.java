@@ -1,4 +1,6 @@
+package Lab1HW;
 
+import Lab1.MyList;
 
 public class MyMap {
 
@@ -24,7 +26,7 @@ public class MyMap {
     private final MyList pairs;
     private  int size;
 
-    MyMap() {
+    public MyMap() {
         pairs = new MyList();
         size = 0;
     }
@@ -38,14 +40,14 @@ public class MyMap {
 
     public Object get(Object key) {
         for (int i = 0; i < size; i++) {
-            if (((pair)pairs.get(i)).k == key) return ((pair)pairs.get(i)).v;
+            if (((pair)pairs.get(i)).k.equals(key)) return ((pair)pairs.get(i)).v;
         }
         return null;
     }
 
     public Object get(Object key, Object bydefault) {
         for (int i = 0; i < size; i++) {
-            if (((pair)pairs.get(i)).k == key) {
+            if (((pair)pairs.get(i)).k.equals(key)) {
                 return ((pair) pairs.get(i)).v;
             }
         }
@@ -55,7 +57,7 @@ public class MyMap {
     public Object remove(Object key) {
         Object rv;
         for (int i = 0; i < size; i++) {
-            if (((pair)pairs.get(i)).k == key) {
+            if (((pair)pairs.get(i)).k.equals(key)) {
                 rv = ((pair) pairs.get(i)).v;
                 pairs.remove(i);
                 size--;
@@ -67,7 +69,7 @@ public class MyMap {
 
     public boolean keyContains(Object key) {
         for (int i = 0; i < size; i++) {
-            if (((pair)pairs.get(i)).k == key) return true;
+            if (((pair)pairs.get(i)).k.equals(key)) return true;
         }
         return false;
     }

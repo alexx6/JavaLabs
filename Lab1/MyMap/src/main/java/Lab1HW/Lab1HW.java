@@ -1,10 +1,14 @@
+package Lab1HW;
+
+import Lab1.MyList;
+
 public class Lab1HW {
     public static void main(String[] args) {
         MyMap test = new MyMap();
         test.put("key1", 1234);
         test.put("key1", 2345);
         test.put("key2", 3456);
-        MyList k = test.getKeys();
+        Lab1.MyList k = test.getKeys();
         MyList v = test.getEntries();
         for (int i = 0; i < test.size(); i++) {
             System.out.println(k.get(i) + ": " + ((MyMap.pair)v.get(i)).Value());

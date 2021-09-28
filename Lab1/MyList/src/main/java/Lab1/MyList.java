@@ -1,13 +1,15 @@
+package Lab1;
+
 public class MyList {
     private Object[] l;
     private int size;
 
-    MyList() {
+    public MyList() {
         l = new Object[0];
         size = 0;
     }
 
-    void add(Object v) {
+    public void add(Object v) {
         size += 1;
         Object[] l1 = new Object[size];
         for (int k = 0; k < size-1; k++) {
@@ -17,7 +19,7 @@ public class MyList {
         l = l1;
     }
 
-    Object get(int i) {
+    public Object get(int i) {
         if (i < size && i >= 0) {
             return l[i];
         } else {
@@ -25,11 +27,11 @@ public class MyList {
         }
     }
 
-    int size() {
+    public int size() {
         return size;
     }
 
-    void add(Object v, int i ) {
+    public void add(Object v, int i ) {
         if (i == size) {
             add(v);
             return;
@@ -46,24 +48,24 @@ public class MyList {
         l = l2;
     }
 
-    int indexOf(Object v) {
+    public int indexOf(Object v) {
         for (int k = 0; k < size; k++) {
-            if (l[k] == v) return k;
+            if (l[k].equals(v)) return k;
         }
         return -1;
     }
 
-    boolean contains (Object v) {
+    public boolean contains (Object v) {
         if (indexOf(v) >= 0) return true;
         return false;
     }
 
-    boolean isEmpty() {
+    public boolean isEmpty() {
         if (size == 0) return true;
         return false;
     }
 
-    Object remove (int i) {
+    public Object remove (int i) {
         if (i >= size || i < 0) return null;
         size--;
         Object v1 = l[i];
@@ -82,7 +84,7 @@ public class MyList {
         return v1;
     }
 
-    void set(Object v, int i) {
+    public void set(Object v, int i) {
         if (i >= 0 && i < size) l[i] = v;
     }
 }
