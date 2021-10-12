@@ -1,6 +1,12 @@
 package Lab1;
 
 public class Lab1 {
+    /**
+     * <p>Совмещает два отсортированных списка элементов, сохраняя отсортированность</p>
+     * @param a Первый остсортированный список
+     * @param b Второй отсортированный список
+     * @return Полученный совмещённый отсортированный список
+     */
     public static MyList merge(MyList a, MyList b) {
         int ns = 0;
         ns += (a == null) ? 0 : a.size();
