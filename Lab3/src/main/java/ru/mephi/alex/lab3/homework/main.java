@@ -18,15 +18,15 @@ public class main {
         System.out.println(employeeName.apply(emp));
 
         Consumer<Employee> employeeInfo =
-                p -> System.out.println(emp.toString());
+                p -> System.out.println(p);
         employeeInfo.accept(emp);
 
         Supplier<Employee> employeeGet =
-                () -> {return Employee.createShortList().get(ThreadLocalRandom.current().nextInt(0, 8));};
+                () -> sl.get(ThreadLocalRandom.current().nextInt(0, 8));
         System.out.println(employeeGet.get());
 
         BiPredicate<Employee, Employee> employeeSameDept =
-                (p, k) -> {return p.getDept() == k.getDept();};
+                (p, k) -> p.getDept().equals(k.getDept());
         System.out.println("Two random employees are from same dept? " + ((employeeSameDept.test(employeeGet.get(),employeeGet.get())) ? "Yes" : "No"));
     }
 

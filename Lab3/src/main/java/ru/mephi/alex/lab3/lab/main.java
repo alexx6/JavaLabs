@@ -6,11 +6,11 @@ public class main {
     public static void main (String... args) {
         List<Employee> sl = Employee.createShortList();
         System.out.println("\nAll employees:");
-        sl.stream().forEach(p -> System.out.println(p.toString()));
+        sl.stream().forEach(p -> System.out.println(p));
 
         System.out.println("\nPaying premium to FEMALE:");
         sl.stream()
-                .filter(p -> p.getGender() == Gender.FEMALE)
+                .filter(p -> p.getGender().equals(Gender.FEMALE))
                 .forEach(p -> Accountant.payPremium(p));
         System.out.println("\nPaying to employees of Finance dept:");
         sl.stream()
@@ -22,7 +22,7 @@ public class main {
                 .forEach(p -> Accountant.payPremium(p));
         System.out.println("\nPaying salary to managers:");
         sl.stream()
-                .filter(p -> p.getRole() == Role.MANAGER)
+                .filter(p -> p.getRole().equals(Role.MANAGER))
                 .forEach(p -> Accountant.paySalary(p));
         System.out.println("\nPaying salary to staff:");
         sl.stream()

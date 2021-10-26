@@ -17,6 +17,9 @@ public class Employee {
     private String state;
     private int code;
 
+    private Employee() {
+    }
+
     public String getGivenName() {
         return givenName;
     }
