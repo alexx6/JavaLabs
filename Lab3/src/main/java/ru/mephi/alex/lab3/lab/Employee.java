@@ -7,28 +7,8 @@ public class Employee {
     private String givenName;
     private String surName;
     private int age;
-
-    enum Gender {
-        MALE,
-        FEMALE
-    }
     private Gender gender;
-
-    enum Role {
-        STAFF(10),
-        MANAGER(20),
-        EXECUTIVE(30);
-        private final int premium;
-        Role(int p) {
-            premium = p;
-        }
-        int getPremium() {
-            return  premium;
-        }
-
-    }
     private Role role;
-
     private String dept;
     private String eMail;
     private String phone;

@@ -10,7 +10,7 @@ public class main {
 
         System.out.println("\nPaying premium to FEMALE:");
         sl.stream()
-                .filter(p -> p.getGender() == Employee.Gender.FEMALE)
+                .filter(p -> p.getGender() == Gender.FEMALE)
                 .forEach(p -> Accountant.payPremium(p));
         System.out.println("\nPaying to employees of Finance dept:");
         sl.stream()
@@ -22,11 +22,11 @@ public class main {
                 .forEach(p -> Accountant.payPremium(p));
         System.out.println("\nPaying salary to managers:");
         sl.stream()
-                .filter(p -> p.getRole() == Employee.Role.MANAGER)
+                .filter(p -> p.getRole() == Role.MANAGER)
                 .forEach(p -> Accountant.paySalary(p));
         System.out.println("\nPaying salary to staff:");
         sl.stream()
-                .filter(p -> p.getRole() == Employee.Role.STAFF)
+                .filter(p -> p.getRole() == Role.STAFF)
                 .forEach(p -> Accountant.payPremium(p));
     }
 }
