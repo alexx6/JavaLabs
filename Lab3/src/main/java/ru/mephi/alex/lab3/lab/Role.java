@@ -8,7 +8,7 @@ public enum Role {
     Role(int p) {
         premium = p;
     }
-    int getPremium() {
+    public int getPremium() {
         return  premium;
     }
 

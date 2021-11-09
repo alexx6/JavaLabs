@@ -15,6 +15,7 @@ public class Employee {
     private String address;
     private String city;
     private String state;
+    private int salary;
     private int code;
 
     private Employee() {
@@ -64,6 +65,14 @@ public class Employee {
 
     public int getCode() {
         return code;
+    }
+
+    public int getSalary() {
+        return salary;
+    }
+
+    public void setSalary(int salary) {
+        this.salary = salary;
     }
 
     public static class Builder {
@@ -133,6 +142,11 @@ public class Employee {
             return this;
         }
 
+        public Builder salary(int s) {
+            employee.salary = s;
+            return this;
+        }
+
         public Employee build() {
             return employee;
         }
@@ -151,7 +165,8 @@ public class Employee {
                 ((address != null) ? "address=" + address + " " : "") +
                 ((city != null) ? "city=" + city + " " : "") +
                 ((state != null) ? "state=" + state + " " : "") +
-                ((code != 0) ? "code=" + code + " " : "");
+                ((code != 0) ? "code=" + code + " " : "") +
+                "Salary=" + salary;
     }
 
     public static List<Employee> createShortList() {
@@ -169,6 +184,7 @@ public class Employee {
                 .city("Yekaterinburg")
                 .state("Sverdlovskaya region")
                 .code(369239)
+                .salary(40000)
                 .build());
         shortList.add(new Employee.Builder()
                 .givenName("Dmitry")
@@ -183,6 +199,7 @@ public class Employee {
                 .city("Dmitrov")
                 .state("Moscow region")
                 .code(383750)
+                .salary(80000)
                 .build());
         shortList.add(new Employee.Builder()
                 .givenName("Petr")
@@ -197,6 +214,7 @@ public class Employee {
                 .city("Moscow")
                 .state("Moscow city")
                 .code(345739)
+                .salary(100000)
                 .build());
         shortList.add(new Employee.Builder()
                 .givenName("Anna")
@@ -211,6 +229,7 @@ public class Employee {
                 .city("Kiev")
                 .state("Kiev region")
                 .code(967827)
+                .salary(60000)
                 .build());
         shortList.add(new Employee.Builder()
                 .givenName("Polina")
@@ -225,6 +244,7 @@ public class Employee {
                 .city("Minsk")
                 .state("Minsk region")
                 .code(385739)
+                .salary(40000)
                 .build());
         shortList.add(new Employee.Builder()
                 .givenName("Nikolay")
@@ -239,6 +259,7 @@ public class Employee {
                 .city("Moscow")
                 .state("Moscow city")
                 .code(395867)
+                .salary(50000)
                 .build());
         shortList.add(new Employee.Builder()
                 .givenName("Ivan")
@@ -253,6 +274,7 @@ public class Employee {
                 .city("St. Petersburg")
                 .state("St. Petersburg city")
                 .code(682746)
+                .salary(35000)
                 .build());
 
         return shortList;
